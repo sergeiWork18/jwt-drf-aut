@@ -5,12 +5,11 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.exceptions import TokenError
-from django.contrib.auth import authenticate, logout
+from django.contrib.auth import logout
 from .serializers import (
     UserRegistrationSerializer, 
     UserLoginSerializer, 
-    UserProfileSerializer, 
-    UserListSerializer
+    UserProfileSerializer
 )
 from .models import User
 from drf_yasg import openapi
@@ -136,10 +135,7 @@ def update_profile(request):
     )
     serializer.is_valid(raise_exception=True)
     serializer.save()
-    
-    return Response({
-        'user': serializer.data
-    })
+    return _get_user_response(request.user)
 
 
 get_profile = update_profile  
