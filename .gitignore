@@ -35,4 +35,5 @@ staticfiles/
 # Project specific
 *.db
 *.sqlite3
+logs.txt
 EOF

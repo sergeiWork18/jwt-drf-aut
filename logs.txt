@@ -1,0 +1,6 @@
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+[18/Mar/2026 08:01:34] "GET /swagger/ HTTP/1.1" 200 1663
+[18/Mar/2026 08:01:34] "GET /swagger/?format=openapi HTTP/1.1" 200 8544
+[18/Mar/2026 08:01:49] "POST /api/auth/register/ HTTP/1.1" 200 700
+[18/Mar/2026 08:02:23] "POST /api/auth/login/ HTTP/1.1" 200 700

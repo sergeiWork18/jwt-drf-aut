@@ -26,12 +26,7 @@ def register(request):
     serializer.is_valid(raise_exception=True)
     
     user = serializer.save()
-    tokens = _get_tokens_for_user(user)
-    
-    return Response({
-        'user': UserProfileSerializer(user).data,
-        'tokens': tokens
-    }, status=status.HTTP_201_CREATED)
+    return _get_user_response(user)
 
 
 @swagger_public('post', UserLoginSerializer, {
@@ -69,12 +64,7 @@ def login(request):
             status=status.HTTP_401_UNAUTHORIZED
         )
     
-    tokens = _get_tokens_for_user(user)
-    
-    return Response({
-        'user': UserProfileSerializer(user).data,
-        'tokens': tokens
-    })
+    return _get_user_response(user)
 
 
 @swagger_with_auth('post', openapi.Schema(  # Вместо None
@@ -166,10 +156,14 @@ def delete_profile_view(request):  # Renamed to avoid conflict
     return Response({'message': 'Account successfully deleted'})
 
 
-def _get_tokens_for_user(user):
-    """Хелпер для генерации токенов"""
+def _get_user_response(user):
+    """Возвращает ответ с данными пользователя и токенами"""
     refresh = RefreshToken.for_user(user)
-    return {
+    tokens = {
         'refresh': str(refresh),
         'access': str(refresh.access_token),
     }
+    return Response({
+        'user': UserProfileSerializer(user).data,
+        'tokens': tokens
+    })
