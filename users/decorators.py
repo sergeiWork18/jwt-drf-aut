@@ -26,11 +26,6 @@ def swagger_with_auth(method, request_body=None, responses=None):
         # Добавляем Bearer для авторизации в swagger UI
         security = [{"Bearer": []}]
         
-        # Создаем копию request_body, чтобы не менять оригинальный параметр
-        body_schema = request_body
-        if body_schema is None:
-            body_schema = openapi.Schema(type=openapi.TYPE_OBJECT)
-        
         # Стандартные responses
         default_responses = {
             401: "Не авторизован",
