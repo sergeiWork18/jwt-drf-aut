@@ -4,3 +4,202 @@ Watching for file changes with StatReloader
 [18/Mar/2026 08:01:34] "GET /swagger/?format=openapi HTTP/1.1" 200 8544
 [18/Mar/2026 08:01:49] "POST /api/auth/register/ HTTP/1.1" 200 700
 [18/Mar/2026 08:02:23] "POST /api/auth/login/ HTTP/1.1" 200 700
+/home/gereas/work/jwt-drf--post-test/auth_system/config/settings.py changed, reloading.
+/home/gereas/work/jwt-drf--post-test/auth_system/config/settings.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 18, 2026 - 08:01:24
+Django version 6.0.3, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+[18/Mar/2026 08:22:22] "GET /swagger/ HTTP/1.1" 200 1663
+[18/Mar/2026 08:22:22] "GET /swagger/?format=openapi HTTP/1.1" 200 8544
+[18/Mar/2026 08:22:39] "POST /api/auth/login/ HTTP/1.1" 200 700
+[18/Mar/2026 08:23:02] "GET /api/articles/ HTTP/1.1" 200 252
+[18/Mar/2026 08:23:23] "GET /api/comments/ HTTP/1.1" 200 265
+Not Found: /api/comments/create/
+Not Found: /api/comments/create/
+[18/Mar/2026 08:23:32] "POST /api/comments/create/ HTTP/1.1" 404 58
+Not Found: /api/comments/create/
+Not Found: /api/comments/create/
+[18/Mar/2026 08:23:35] "POST /api/comments/create/ HTTP/1.1" 404 58
+[18/Mar/2026 08:23:41] "GET /api/comments/ HTTP/1.1" 200 265
+[18/Mar/2026 08:23:54] "POST /api/comments/create/ HTTP/1.1" 201 72
+[18/Mar/2026 08:23:59] "GET /api/comments/ HTTP/1.1" 200 338
+/home/gereas/work/jwt-drf--post-test/auth_system/users/urls.py changed, reloading.
+/home/gereas/work/jwt-drf--post-test/auth_system/users/urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 12 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): token_blacklist.
+Run 'python manage.py migrate' to apply them.
+March 18, 2026 - 08:21:14
+Django version 6.0.3, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/core/management/base.py", line 496, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/core/checks/urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 743, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 722, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/gereas/work/jwt-drf--post-test/auth_system/config/urls.py", line 7, in <module>
+    path('', include('users.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/gereas/work/jwt-drf--post-test/auth_system/users/urls.py", line 18, in <module>
+    path('api/users/profile/', views.get_profile, name='get_profile'),  # Добавлен эндпоинт для GET
+                               ^^^^^^^^^^^^^^^^^
+AttributeError: module 'users.views' has no attribute 'get_profile'
+/home/gereas/work/jwt-drf--post-test/auth_system/users/views.py changed, reloading.
+/home/gereas/work/jwt-drf--post-test/auth_system/users/views.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/core/management/base.py", line 496, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/core/checks/urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 743, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 722, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/gereas/work/jwt-drf--post-test/auth_system/config/urls.py", line 7, in <module>
+    path('', include('users.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gereas/.cache/pypoetry/virtualenvs/auth-system-JOt7IgSV-py3.12/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/gereas/work/jwt-drf--post-test/auth_system/users/urls.py", line 18, in <module>
+    path('api/users/profile/', views.get_profile, name='get_profile'),  # Добавлен эндпоинт для GET
+                               ^^^^^^^^^^^^^^^^^
+AttributeError: module 'users.views' has no attribute 'get_profile'
+/home/gereas/work/jwt-drf--post-test/auth_system/users/views.py changed, reloading.
+/home/gereas/work/jwt-drf--post-test/auth_system/users/views.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/gereas/work/jwt-drf--post-test/auth_system/users/views.py changed, reloading.
+/home/gereas/work/jwt-drf--post-test/auth_system/users/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 18, 2026 - 08:28:34
+Django version 6.0.3, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+[18/Mar/2026 08:32:35] "GET /admin/users/user/ HTTP/1.1" 200 22074
+[18/Mar/2026 08:32:35] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+/home/gereas/work/jwt-drf--post-test/auth_system/users/views.py changed, reloading.
+/home/gereas/work/jwt-drf--post-test/auth_system/users/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 18, 2026 - 08:29:10
+Django version 6.0.3, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader

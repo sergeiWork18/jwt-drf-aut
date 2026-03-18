@@ -15,6 +15,7 @@ urlpatterns = [
     
     # Управление профилем
     path('api/users/profile/', views.update_profile, name='update_profile'),
+    path('api/users/profile/', views.get_profile, name='get_profile'),  # Добавлен эндпоинт для GET
     path('api/users/profile/delete/', views.delete_profile_view, name='delete_profile'),
     
 

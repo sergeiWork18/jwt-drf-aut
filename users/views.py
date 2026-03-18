@@ -26,7 +26,9 @@ def register(request):
     serializer.is_valid(raise_exception=True)
     
     user = serializer.save()
-    return _get_user_response(user)
+    response = _get_user_response(user)
+    response.status_code = status.HTTP_201_CREATED
+    return response
 
 
 @swagger_public('post', UserLoginSerializer, {
@@ -107,6 +109,10 @@ def logout_view(request):
     return Response({'message': 'Successfully logged out'})
 
 
+@swagger_with_auth('get', UserProfileSerializer, {
+    200: UserProfileSerializer,
+    401: 'Не авторизован'
+})
 @swagger_with_auth('put', UserProfileSerializer, {
     200: UserProfileSerializer,
     400: "Ошибка валидации"
@@ -115,9 +121,14 @@ def logout_view(request):
     200: UserProfileSerializer,
     400: "Ошибка валидации"
 })
-@api_view(['PUT', 'PATCH'])
+@api_view(['GET', 'PUT', 'PATCH'])
 @permission_classes([IsAuthenticated])
 def update_profile(request):
+    if request.method == 'GET':
+        serializer = UserProfileSerializer(request.user)
+        return Response({'user': serializer.data})
+    
+    # Для PUT и PATCH
     serializer = UserProfileSerializer(
         request.user, 
         data=request.data, 
@@ -129,6 +140,9 @@ def update_profile(request):
     return Response({
         'user': serializer.data
     })
+
+
+get_profile = update_profile  
 
 
 @swagger_with_auth('delete', None, {
@@ -148,9 +162,8 @@ def delete_profile_view(request):  # Renamed to avoid conflict
     if refresh_token:
         try:
             token = RefreshToken(refresh_token)
-            # token.blacklist() # Отключен из-за отсутствия blacklist в библиотеке
         except (TokenError, AttributeError):
-            pass  # Пропускаем ошибки, как раньше
+            pass
     
     logout(request)
     return Response({'message': 'Account successfully deleted'})
